@@ -1,0 +1,25 @@
+.container {
+	@include container;
+	background: #885e59;
+}
+.main {
+	margin-top: 1000px;
+	@include row-flex;
+	//align-items: flex-start;
+	//justify-content:center;
+}
+.bl {
+	margin: 10px 0;
+	@include col;
+	min-height: 100px;
+	@include size(3);
+	@include size-sm(6);
+	@include sm-block {
+		background: #333;
+	}
+	@include size-xs(12);
+	//width: 300px;
+	background: #f6f6f6;
+	@include font(thin);
+	text-align: center;
+}

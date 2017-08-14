@@ -1,0 +1,84 @@
+%border{
+	 border: 2px solid red;
+}
+@mixin default-font {
+	font-family: ralewayregular, sans-serif;
+}
+
+@function rem($px){
+	@return $px/16px+0rem;
+}
+@mixin font($size:16px, $color:#000){
+	font-size: rem($size);
+	color: $color;
+}
+@mixin inline-block($valign:top){
+	display: inline-block;
+	vertical-align: $valign;
+}
+
+@mixin bg-cover($url) {
+	background: url($url) no-repeat center center;
+	background-size: cover;
+}
+@mixin absolute-center {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+/* --------- clearfix mixins --------- */
+%clearfix {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+/* --------- responsive mixins --------- */
+
+@mixin desktop {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media screen and (max-width: 992px) {
+		@content;
+	}
+}
+@mixin tablets {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin phones {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+//placeholder
+@mixin placeholder{
+	&::-webkit-input-placeholder{
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}

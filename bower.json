@@ -1,0 +1,14 @@
+{
+  "name": "smitler",
+  "description": "lending",
+  "main": "index.html",
+  "authors": [
+    "DenisSeroshtan"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jQuery": "^3.2.1"
+  }
+}

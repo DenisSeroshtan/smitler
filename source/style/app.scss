@@ -1,0 +1,16 @@
+//color
+$accent: #F9C869;
+$blue: #66C7CD;
+$red: #F86868;
+
+//common style
+@import "_misc/mixins";
+@import "_misc/fonts";
+@import "_misc/smartgrid";
+@import "_misc/adjustment";
+
+// animation
+@import "_misc/preloader";
+
+//section
+@import "common/header";
