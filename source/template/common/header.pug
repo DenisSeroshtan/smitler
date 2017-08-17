@@ -1,12 +1,30 @@
-.container
-	.main
-		.bl hello
-		.bl.
-			hello lorem dfgsdfgsdgfsdfgsdfgsdgsdgsdfgsdfg
-			hello lorem dfgsdfgsdgfsdfgsdfgsdgsdgsdfgsdfg
-			hello lorem dfgsdfgsdgfsdfgsdfgsdgsdgsdfgsdfg
-			hello lorem dfgsdfgsdgfsdfgsdfgsdgsdgsdfgsdfg
-			hello lorem dfgsdfgsdgfsdfgsdfgsdgsdgsdfgsdfg
-			hello lorem dfgsdfgsdgfsdfgsdfgsdgsdgsdfgsdfg
-		.bl hello
-		.bl hello
+header(style="background-image:url('assets/img/top-bg.jpg')").header
+
+	.header-top
+		.header-top__logo
+			a(href="/index.html").header-top__logo-link
+				img(src="assets/img/logo-1.svg" alt="салон красоты smitler" ).header-top__logo-img
+
+		.header-top__phone +7 (495) 118-94-35
+
+		a(href="#").hamburger.hamburger--emphatic#my-menu
+			span.hamburger-box
+				span.hamburger-inner
+	+socials('header')
+	.header-mid
+		.header-mid__wrap
+			.container
+				.header-mid__row
+					.header-welcome
+						.header-welcome__title
+							each value, key in welcomeTitle
+								div(class = `header-title__${key}`)
+									if key == 'main'
+										h1= value
+									else
+										p= value
+						.header-welcome__desc
+							p= desc.header
+						a(href="#").header-welcome__btn о салоне
+
+

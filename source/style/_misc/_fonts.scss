@@ -70,7 +70,7 @@
 }
 
 
-@mixin font($style:regular) {
+@mixin font-family($style:regular) {
 	@if $style == regular {
 		font-family: 'ralewayregular';
 	}

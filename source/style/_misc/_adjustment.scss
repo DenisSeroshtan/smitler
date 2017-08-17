@@ -1,7 +1,9 @@
-
+@mixin default-font {
+	font-family: ralewayregular, sans-serif;
+}
 //style
 html{
-	@include reset;
+	@include reset; //reset style of smartgrid
 	box-sizing: border-box;
 	font-size: 16px;
 	@include desktop {
@@ -41,6 +43,9 @@ body {
 	position: relative;
 	min-width: 320px;
 }
+.container{
+	@include container;
+}
 
 li {
 	list-style: none;
@@ -79,9 +84,9 @@ textarea
 	white-space:normal;
 	background:none;
 	line-height:1;
-
 	font-size:13px;
-	font-family:Arial;
+	@include default-font;
+
 }
 
 input:focus

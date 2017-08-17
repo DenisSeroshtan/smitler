@@ -1,13 +1,120 @@
+.header {
+	width: 100%;
+	min-height: rem(700px);
+	height: 100vh;
+	@include cover(#1a1a1a);
+	position: relative;
+	color: #fff;
+
+}
+
+.header-top {
+	position: absolute;
+	width: 100%;
+	padding: rem(48px) rem(90px) 0 rem(45px);
+	display: flex;
+}
+
+.header-top__logo {
+	flex-grow: 1;
+}
+
+.header-top__logo-link {
+	display: block;
+	max-width: 125px;
+}
+
+.header-top__phone {
+	@include font(20px);
+	@include font-family(fira);
+	@include icon-before($icon-mobile-phone, 10px){
+		color: #95989A;
+	};
+	@include sm-block {
+		display: none;
+	}
+}
+.hamburger {
+	position: absolute;
+	right: rem(12.5px);
+	z-index: 100;
+}
+.header__socials-list {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
+	border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+$socials: (facebook, instagram, vk);
+ @each $social in $socials {
+	 .socials__link {
+		 display: block;
+		 margin: rem(8px) rem(12.5px);
+		 background: rgba(255, 255, 255, 0.25);
+		 border-radius: 50%;
+		 height: rem(38px);
+		 width: rem(38px);
+		 transition: background-color .25s ease;
+		 color: #353535;
+		 text-align: center;
+		 line-height: rem(38px);
+		 &:hover {
+			 background-color: rgba(255, 255, 255, .4);
+		 }
+		 &.#{$social}{
+			  @if ($social == facebook) {
+				  @include icon-before($icon-facebook)
+			  }
+			 @if ($social == instagram) {
+				 @include icon-before($icon-instagram)
+			 }
+			 @if ($social == vk) {
+				 @include icon-before($icon-vk)
+
+			 }
+		 }
+	 }
+ }
+.header-mid {
+	display: flex;
+	height: 100%;
+}
+.header-mid__wrap{
+	margin: auto;
+}
+.header-mid__row {
+	@include row-flex;
+}
+.header-welcome {
+	text-align: center;
+	@include col;
+	@include size(6);
+	@include size-sm(8);
+	@include size-xs(10);
+}
+.header-welcome__title {
+	text-transform:uppercase;
+}
+
+
+
 .container {
 	@include container;
-	background: #885e59;
+
 }
+
 .main {
 	margin-top: 1000px;
 	@include row-flex;
 	//align-items: flex-start;
 	//justify-content:center;
 }
+
 .bl {
 	margin: 10px 0;
 	@include col;

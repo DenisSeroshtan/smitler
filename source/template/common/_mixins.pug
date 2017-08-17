@@ -1,6 +1,13 @@
 mixin preloader
 	.preloader
 		.pulse
+
+mixin socials(className)
+	ul(class= className +"__socials-list")
+		each value, key in pathSocials
+			li(class="socials__items")
+				a(href=value class="socials__link " + key)
+
 mixin form
 	form(action="#" method="post" class="presentation__form")
 		.presentation__form-title

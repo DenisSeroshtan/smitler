@@ -1,14 +1,11 @@
 %border{
 	 border: 2px solid red;
 }
-@mixin default-font {
-	font-family: ralewayregular, sans-serif;
-}
 
 @function rem($px){
 	@return $px/16px+0rem;
 }
-@mixin font($size:16px, $color:#000){
+@mixin font($size:16px, $color:#fff){
 	font-size: rem($size);
 	color: $color;
 }
@@ -20,6 +17,13 @@
 @mixin bg-cover($url) {
 	background: url($url) no-repeat center center;
 	background-size: cover;
+}
+@mixin cover($color){
+	background-color: $color;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
 }
 @mixin absolute-center {
 	top: 0;

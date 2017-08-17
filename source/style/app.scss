@@ -2,15 +2,18 @@
 $accent: #F9C869;
 $blue: #66C7CD;
 $red: #F86868;
+$fontawesome_path: '../fonts/fontawesome';
 
 //common style
 @import "_misc/mixins";
 @import "_misc/fonts";
 @import "_misc/smartgrid";
 @import "_misc/adjustment";
+@import "_misc/font-awesome";
 
 // animation
 @import "_misc/preloader";
+@import "common/hamburger";
 
 //section
 @import "common/header";
