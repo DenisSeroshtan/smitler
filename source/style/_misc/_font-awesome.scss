@@ -11,21 +11,6 @@ $fontawesome_path: "." !default
   font-style: normal;
 
 }
-
-@mixin icon($icon){
-  @extend %icon;
-  content: $icon;
-
-  }
-
-@mixin icon-before($icon, $padding: 0) {
-    &:before {
-      @include icon($icon);
-      padding-right: $padding;
-      @content;
-    }
-  }
-
 %icon {
   font-family: FontAwesome;
   font-weight: normal;
@@ -33,8 +18,38 @@ $fontawesome_path: "." !default
   display: inline-block;
   text-decoration: inherit;
   line-height: 1;
-  
 }
+
+@mixin icon($icon){
+  @extend %icon;
+  content: $icon;
+
+  }
+
+@mixin icon-pseudo ($icon, $position: before) {
+
+  @if ($position == after) {
+    &:after {
+      @include icon($icon);
+      @content;
+    }
+  }
+  @else if ($position == both) {
+    &:before, &:after {
+      @include icon($icon);
+      @content;
+    }
+  }
+  @else {
+    &:before {
+      @include icon($icon);
+      @content;
+    }
+  }
+}
+
+
+
 //-_-_-_-_-_-_-_-_-_-_-_-_-/variable icons/_-_-_-_-_-_-_-_-_-_-_-_-//
 $icon-500px: "\f26e";
 $icon-adjust: "\f042";

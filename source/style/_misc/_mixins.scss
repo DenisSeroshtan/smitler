@@ -1,6 +1,3 @@
-%border{
-	 border: 2px solid red;
-}
 
 @function rem($px){
 	@return $px/16px+0rem;
@@ -45,7 +42,31 @@
 		clear: both;
 	}
 }
+@mixin pseudoContent($content) {
+	content: $content;
+	display: inline-block;
+}
+@mixin pseudo ($position: before, $content: "") {
 
+	@if ($position == after) {
+		&:after {
+			@include pseudoContent($content);
+			@content
+		}
+	}
+	@else if ($position == both) {
+		&:before, &:after {
+			@include pseudoContent($content);
+			@content
+		}
+	}
+	@else {
+		&:before {
+			@include pseudoContent($content);
+			@content
+		}
+	}
+}
 /* --------- responsive mixins --------- */
 
 @mixin desktop {

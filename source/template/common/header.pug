@@ -5,7 +5,7 @@ header(style="background-image:url('assets/img/top-bg.jpg')").header
 			a(href="/index.html").header-top__logo-link
 				img(src="assets/img/logo-1.svg" alt="салон красоты smitler" ).header-top__logo-img
 
-		.header-top__phone +7 (495) 118-94-35
+		.phone= contacts.phone
 
 		a(href="#").hamburger.hamburger--emphatic#my-menu
 			span.hamburger-box
@@ -25,6 +25,8 @@ header(style="background-image:url('assets/img/top-bg.jpg')").header
 										p= value
 						.header-welcome__desc
 							p= desc.header
-						a(href="#").header-welcome__btn о салоне
-
+						a(href="#").btn о салоне
+	.header-bottom
+		.container
+			+contacts("header")
 
