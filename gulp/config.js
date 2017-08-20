@@ -5,6 +5,7 @@ module.exports = {
   src: {
     pug: './source/template/pages/*.pug',
     style: './source/style/**/*.scss',
+    js: './source/js/**/*.js',
     img: './source/img/**/*.*',
     fonts: './source/fonts/**/*.*'
   },

@@ -7,10 +7,12 @@ header(style="background-image:url('assets/img/top-bg.jpg')").header
 
 		.phone= contacts.phone
 
-		a(href="#").hamburger.hamburger--emphatic#my-menu
+		a(href="#my-menu").hamburger.hamburger--emphatic
 			span.hamburger-box
 				span.hamburger-inner
-	+socials('header')
+	nav#my-menu
+		+menuNav("header-nav")
+	+socials('header-socials')
 	.header-mid
 		.header-mid__wrap
 			.container
@@ -28,5 +30,5 @@ header(style="background-image:url('assets/img/top-bg.jpg')").header
 						a(href="#").btn о салоне
 	.header-bottom
 		.container
-			+contacts("header")
+			+contacts("header-contacts")
 
