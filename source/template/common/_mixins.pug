@@ -2,11 +2,15 @@ mixin preloader
 	.preloader
 		.pulse
 
+mixin Btn (titleText, mod = " ")
+	a(href="#" class= "btn " + mod) #{titleText}
+
 mixin socials(className)
 	ul(class= className + "__list")
 		each value, key in pathSocials
 			li(class=className + "__items")
 				a(href=value class=className + "__link " + key)
+
 mixin contacts(className)
 	ul(class=className + "__list")
 		each value, key in contacts
@@ -21,3 +25,24 @@ mixin menuNav(className)
 							a(href=key.path class=className + "__link")= key.name
 				else
 					a(href=key.path class=className + "__link")= key.name
+mixin Services
+	each value, key in menu
+		- var str = value.name
+		if value.services !== undefined
+			- var title = str.replace("сервис", " ")
+			li(class = "services__items")
+				.services-content
+					.services-title
+						.services-title__logo
+							img(src="assets/img/logo-2.svg" class= "services-title__img")
+						h3.services-title__top= title
+							span.services-title__bot сервис
+					each priceList in value
+						if typeof priceList == "object"
+							ul.services__content-list
+								each name, price in priceList
+									li.services__content-items
+										span(class="services-name")= price + " - "
+										span(class="services-price")= name
+					+Btn("ВСЕ УСЛУГИ", "btn_white")
+				div(class = "services-bg" style= `background-image: url('assets/img/services/${key}.png')`)

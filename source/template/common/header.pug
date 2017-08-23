@@ -26,8 +26,8 @@ header(style="background-image:url('assets/img/top-bg.jpg')").header
 									else
 										p= value
 						.header-welcome__desc
-							p= desc.header
-						a(href="#").btn о салоне
+							p !{desc.header}
+						+Btn("о салоне")
 	.header-bottom
 		.container
 			+contacts("header-contacts")

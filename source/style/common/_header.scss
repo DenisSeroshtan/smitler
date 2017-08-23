@@ -45,7 +45,9 @@ $iconColor: #95989a;
 
 .hamburger {
 	position: absolute;
-	right: rem(12.5px);
+	right: 0;
+	top: rem(38px);
+	padding: rem(12.5px);
 	z-index: 100;
 }
 
@@ -67,7 +69,7 @@ $iconColor: #95989a;
 	transition: background-color .25s ease;
 	color: #353535;
 	&:hover {
-		background-color: rgba(255, 255, 255, .4);
+		background: rgba(#fff, .4);
 	}
 }
 
@@ -97,6 +99,7 @@ $socials: (facebook, instagram, vk);
 .header-mid {
 	display: flex;
 	height: 100%;
+	padding: rem(120px) 0;
 }
 
 .header-mid__wrap {
@@ -104,15 +107,19 @@ $socials: (facebook, instagram, vk);
 }
 
 .header-mid__row {
-	@include row-flex;
+	@include row-float;
+	//@include row-flex;
 }
 
 .header-welcome {
 	text-align: center;
-	@include col;
+	@include col-float;
+	@include col-padding;
 	@include size(7);
 	@include size-md(8);
 	@include size-xs(10);
+	@include size-xxs(11);
+
 }
 
 .header-welcome__title {
@@ -122,11 +129,18 @@ $socials: (facebook, instagram, vk);
 .header-title__top {
 	display: flex;
 	justify-content: center;
+	white-space:nowrap;
 	align-items: center;
 	font-size: rem(14px);
 	line-height: 1;
-	@include xs-block {
+	@include sm-block {
 		font-size: rem(12px);
+	}
+	@include xs-block {
+		font-size: rem(11px);
+	}
+	@include xxs-block{
+		font-size: rem(10px);
 	}
 	&:before, &:after {
 		display: inline-block;
@@ -239,6 +253,7 @@ $socials: (facebook, instagram, vk);
 	@include col;
 	@include size(4);
 	@include size-md(6);
+	@include size-xs(12);
 	&.address {
 		@include md-block {
 			text-align: center;

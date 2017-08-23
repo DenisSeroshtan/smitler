@@ -1,0 +1,95 @@
+.services {
+	width: 100%;
+}
+
+$steps: 3;
+
+@for $i from 1 through $steps {
+	.services__items {
+		&:nth-child(#{$steps}n+#{$i}) {
+			.services-content {
+				@if ($i%3 == 1) {
+					background: $blue;
+				}
+				@if ($i%3 == 2) {
+					background: $red;
+				}
+				@if ($i%3 == 0) {
+					background: $accent;
+				}
+			}
+		}
+	}
+}
+
+.services-content {
+	padding: rem(60px) 10% rem(40px);
+	text-align: center;
+	color: #fff;
+
+}
+
+.services-title__logo {
+	display: inline-block;
+	max-width: rem(100px);
+
+}
+
+.services-title__top {
+	@include font(30px);
+	@include font-family(exbold);
+	text-transform: uppercase;
+	line-height: 1.1;
+	.services-title__bot {
+		width: 100%;
+		display: inline-block;
+		@include font(22px);
+		@include font-family(light);
+	}
+}
+
+.services__content-list {
+	margin-top: rem(30px);
+}
+
+.services__content-items {
+	@include font(18px);
+	text-transform: none;
+	white-space: nowrap;
+	padding: rem(12px) 0;
+	border-top: 1px solid rgba(#000, .12);
+	&:first-child {
+		padding-top: 0;
+		border-color: transparent;
+	}
+	.services-name {
+		@include font-family(light);
+	}
+	.services-price {
+		@include font-family(fira);
+		font-weight: 600;
+		color: #4A4A4A;
+		@include icon-pseudo($icon-rub, after) {
+			padding-left: rem(5px);
+		}
+	}
+}
+
+.btn_white {
+	color: #444444;
+	background-color: #fff !important;
+	&:after {
+		background: #E6E6E6;
+	}
+	&:hover {
+		&:after {
+			background: #fff;
+		}
+	}
+
+}
+
+.services-bg {
+	min-height: rem(460px);
+	@include cover();
+}
