@@ -204,6 +204,7 @@ $socials: (facebook, instagram, vk);
 	position: relative;
 	text-transform: uppercase;
 	letter-spacing: rem(3px);
+	white-space: nowrap;
 	margin-top: rem(32px);
 	@include font(13px);
 	@include font-family(semi);

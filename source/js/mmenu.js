@@ -1,5 +1,5 @@
 
-  $(function() {
+  (function() {
       var $menu = $("#my-menu").mmenu({
         extensions: [
           'theme-black',
@@ -30,4 +30,4 @@
         }, 300);
       });
 
-});
+}());

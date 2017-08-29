@@ -25,18 +25,19 @@ mixin menuNav(className)
 							a(href=key.path class=className + "__link")= key.name
 				else
 					a(href=key.path class=className + "__link")= key.name
+
 mixin Services
 	each value, key in menu
 		- var str = value.name
 		if value.services !== undefined
 			- var title = str.replace("сервис", " ")
-			li(class = "services__items")
+			div(class = "services__items")
 				.services-content
 					.services-title
 						.services-title__logo
 							img(src="assets/img/logo-2.svg" class= "services-title__img")
 						h3.services-title__top= title
-							span.services-title__bot сервис
+						.services-title__bot сервис
 					each priceList in value
 						if typeof priceList == "object"
 							ul.services__content-list

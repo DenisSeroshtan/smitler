@@ -2,21 +2,118 @@
 	width: 100%;
 }
 
+.services__list {
+	display: flex;
+	position: relative;
+}
+
+.services__items {
+	display: flex;
+	flex-direction: column;
+	&:hover {
+		.services-bg {
+			opacity: 1;
+		}
+	}
+}
+
+.owl-item {
+	&:nth-child(odd) {
+		.services__items {
+			.services-bg {
+				order: -1;
+				@include sm-block {
+					order: 0;
+				}
+			}
+		}
+	}
+}
+
+.owl-nav {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	.owl-prev {
+		position: absolute;
+		left: 0;
+		width: rem(64px);
+		height: rem(64px);
+		background: #fff;
+		&:hover {
+			&::before {
+				animation: pulse linear .8s 3
+			}
+		}
+		@include icon-pseudo($icon-angle-double-left) {
+			font-size: rem(26px);
+			position: absolute;
+			left: 50%;
+			line-height: rem(64px);
+			margin-left: rem(-10px);
+
+		}
+	}
+	.owl-next {
+		position: absolute;
+		right: 0;
+		width: rem(64px);
+		height: rem(64px);
+		background: #fff;
+		&:hover {
+			&::before {
+				animation: pulse linear .8s 3
+			}
+		}
+		@include icon-pseudo($icon-angle-double-right) {
+			font-size: rem(26px);
+			position: absolute;
+			left: 50%;
+			line-height: rem(64px);
+			margin-left: rem(-5px);
+		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1)
+	}
+	50% {
+		transform: scale(1.4)
+	}
+	100% {
+		transform: scale(1)
+	}
+}
+
+.services-content {
+	height: 50%;
+
+}
+
+.services-bg {
+	height: 50%;
+}
+
 $steps: 3;
 
 @for $i from 1 through $steps {
-	.services__items {
+	.owl-item {
+
 		&:nth-child(#{$steps}n+#{$i}) {
-			.services-content {
+			.services__items {
+
 				@if ($i%3 == 1) {
-					background: $blue;
+					background-color: $red;
 				}
 				@if ($i%3 == 2) {
-					background: $red;
+					background-color: $blue;
 				}
 				@if ($i%3 == 0) {
-					background: $accent;
+					background-color: $accent;
 				}
+
 			}
 		}
 	}
@@ -26,26 +123,26 @@ $steps: 3;
 	padding: rem(60px) 10% rem(40px);
 	text-align: center;
 	color: #fff;
-
 }
 
 .services-title__logo {
 	display: inline-block;
 	max-width: rem(100px);
-
 }
 
 .services-title__top {
-	@include font(30px);
+	@include font(28px);
 	@include font-family(exbold);
 	text-transform: uppercase;
+	white-space: nowrap;
 	line-height: 1.1;
-	.services-title__bot {
-		width: 100%;
-		display: inline-block;
-		@include font(22px);
-		@include font-family(light);
-	}
+}
+
+.services-title__bot {
+	width: 100%;
+	display: inline-block;
+	@include font(22px);
+	@include font-family(light);
 }
 
 .services__content-list {
@@ -77,11 +174,13 @@ $steps: 3;
 
 .btn_white {
 	color: #444444;
-	background-color: #fff !important;
+	background-color: #fff;
 	&:after {
 		background: #E6E6E6;
+		transition: .15s ease;
 	}
 	&:hover {
+		background-color: #fff;
 		&:after {
 			background: #fff;
 		}
@@ -90,6 +189,8 @@ $steps: 3;
 }
 
 .services-bg {
-	min-height: rem(460px);
+	height: rem(482px);
 	@include cover();
+	opacity: .7;
+	transition: opacity .5s ease;
 }
