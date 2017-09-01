@@ -11,6 +11,7 @@
   "dependencies": {
     "jQuery": "^3.2.1",
     "jQuery.mmenu": "mmenu#^6.1.5",
-    "owl.carousel": "original-owl-carousel#^2.2.1"
+    "owl.carousel": "original-owl-carousel#^2.2.1",
+    "equalheights": "https://github.com/neomen/equalHeights.git"
   }
 }
