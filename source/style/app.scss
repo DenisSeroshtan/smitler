@@ -2,7 +2,11 @@
 $accent: #F9C869;
 $blue: #66C7CD;
 $red: #F86868;
+$dark: #1a1a1a;
+$overlay: #3D3C3C;
 $fontawesome_path: '../fonts/fontawesome';
+
+
 
 //common style
 @import "_misc/mixins";
@@ -19,3 +23,5 @@ $fontawesome_path: '../fonts/fontawesome';
 //section
 @import "common/header";
 @import "common/services";
+@import "common/about";
+@import "common/feedback";

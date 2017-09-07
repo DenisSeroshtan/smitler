@@ -12,6 +12,8 @@
     "jQuery": "^3.2.1",
     "jQuery.mmenu": "mmenu#^6.1.5",
     "owl.carousel": "original-owl-carousel#^2.2.1",
-    "equalheights": "https://github.com/neomen/equalHeights.git"
+    "equalheights": "https://github.com/neomen/equalHeights.git",
+    "fotorama": "^4.6.4",
+    "jquery.form-styler": "jquery-form-styler#^2.0.0"
   }
 }

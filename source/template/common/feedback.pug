@@ -1,0 +1,22 @@
+section(style= inlineImg.feedback_bg).section__feedback
+	.feedback__right
+		.container
+			.feedback__wrap
+				+titleLogo
+				.s-title.s-title_white ОСТАВИТЬ ЗАЯВКУ
+				.feedback__text
+					| Оставьте заявку и мы перезвоним вам в течение 15 минут.
+				form.form
+					+formHidden("haron_777@mail.ru", "smitler")
+					input(name="name"
+						type="text"
+						placeholder="Ваше имя..."
+						required).input__name
+					input(name="phone"
+						type="text"
+						placeholder="Ваш телефон"
+						required).input__phone
+					select(name="Услуга" class="select")
+						option(disabled selected value) Выберите услугу...
+						+menuNav("option")
+					+Btn("Отправить", "btn_white")

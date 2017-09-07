@@ -57,7 +57,7 @@ $break_xxs: 380px;
     }
 }
 
-@mixin container(){
+@mixin wrapper(){
     max-width: 1170px;
     padding-left: 30px;
     padding-right: 30px;
@@ -79,8 +79,8 @@ $break_xxs: 380px;
     }
 
     @media screen and (max-width: $break_xxs){
-        padding-left: 7.5px;
-        padding-right: 7.5px;
+        padding-left: 12.5px;
+        padding-right: 12.5px;
     }
 }
 @mixin row-flex(){

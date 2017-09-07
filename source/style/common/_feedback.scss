@@ -1,0 +1,57 @@
+.section__feedback {
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: 15%;
+	background-size: contain;
+	@extend %clearfix;
+	@include md-block {
+		@include cover();
+	}
+}
+.feedback__right {
+  padding: 8% 0;
+	width: 50%;
+	float: right;
+	background: rgba($accent, .92);
+	.container {
+		color: #fff;
+		@include row-flex;
+	}
+	@include md-block {
+		float: none;
+		width: 100%;
+	}
+}
+
+
+.feedback__wrap {
+	@include col;
+	@include size(11);
+	@include offset-left(1);
+	@include size-md(8);
+	@include offset-md(2);
+
+	@include size-xs(12);
+	@include offset-xs(0);
+
+}
+.s-title_white {
+	color: inherit;
+}
+.form {
+	margin-top: rem(35px)
+}
+.input__name, .input__phone, .select {
+	width: 100%;
+	color: #fff;
+	padding: rem(10px) rem(20px);
+	border: 1px solid #E0B660;
+	border-bottom: 2px solid #E0B660;
+	margin-bottom: rem(18px);
+	@include placeholder {
+		color: #fff;
+	}
+}
+.select{
+	margin-bottom: rem(30px);
+}
