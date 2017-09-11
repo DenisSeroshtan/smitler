@@ -1,5 +1,5 @@
 (function () {
-
+  $(".input__phone").mask("+7(999) 999-9999");
   $('.js-h3').each(function() {
     var $this = $(this);
     $this.html($this.html().replace(/(\S+)\s*$/, '<span>$1</span>'));

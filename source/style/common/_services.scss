@@ -152,7 +152,7 @@ $colors: $red, $blue, $accent;
 	.services-price {
 		@include font-family(fira);
 		font-weight: 600;
-		color: #4A4A4A;
+		color: $darkFont;
 		@include icon-pseudo($icon-rub, after) {
 			padding-left: rem(5px);
 		}
@@ -163,6 +163,7 @@ $colors: $red, $blue, $accent;
 	color: #444444;
 	background-color: rgba(#fff, .85);
 	margin-top: auto;
+	cursor: pointer;
 	&:after {
 		background: #E6E6E6;
 		transition: .15s ease;

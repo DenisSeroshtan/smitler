@@ -1,10 +1,17 @@
+// variables
+	$error:  #ff4a1e;
+	%error {
+		outline: 2px solid $error !important;
+	}
+
+
 .section__feedback {
 	width: 100%;
 	background-repeat: no-repeat;
-	background-position: 15%;
+	background-position: -20%;
 	background-size: contain;
 	@extend %clearfix;
-	@include md-block {
+	@include laptop {
 		@include cover();
 	}
 }
@@ -23,35 +30,149 @@
 	}
 }
 
-
 .feedback__wrap {
 	@include col;
 	@include size(11);
 	@include offset-left(1);
+
 	@include size-md(8);
 	@include offset-md(2);
 
 	@include size-xs(12);
 	@include offset-xs(0);
+	position: relative;
 
 }
 .s-title_white {
 	color: inherit;
 }
 .form {
-	margin-top: rem(35px)
+	margin-top: rem(35px);
+	position: relative;
 }
-.input__name, .input__phone, .select {
+.success {
+	z-index: 10;
+	text-transform: uppercase;
+	@include font(22px, $darkFont);
+	@include font-family(bold);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	& ~ * {
+		transition: all .5s ease;
+	}
+	&.active {
+		display: flex;
+		& ~ * {
+			opacity: .5;
+			filter: blur(10px);
+		}
+	}
+	span {
+		margin: auto
+	}
+}
+.form__group {
+	margin-bottom: rem(18px);
+	position: relative;
+}
+.input__name, .input__phone {
 	width: 100%;
 	color: #fff;
 	padding: rem(10px) rem(20px);
 	border: 1px solid #E0B660;
 	border-bottom: 2px solid #E0B660;
-	margin-bottom: rem(18px);
+	&.error {
+		outline: 2px solid $error;
+	}
+	&:focus {
+		border-color: rgba(0,0,0,.25);
+	}
 	@include placeholder {
 		color: #fff;
+	}
+}
+select.error{
+	@extend %error;
+}
+
+label.error {
+
+	position: absolute;
+	color: $error;
+	top: 100%;
+	left: 0;
+}
+#услуга-error {
+	width:100%;
+	height:100%;
+	position: absolute;
+	top: 0;
+	@extend %error;
+	&:after {
+		content: "Необходимо выбрать услугу";
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		height:100%;
+
+	}
+
+}
+.jq-selectbox__select {
+	padding: rem(10px) rem(20px);
+	border: 1px solid #E0B660;
+	border-bottom: 2px solid #E0B660;
+	line-height: 1.4;
+}
+.jq-selectbox {
+	width: 100%;
+	cursor: pointer;
+  &.up{
+	  @include icon-pseudo($icon-angle-down){
+		  position: absolute;
+		  top: 50%;
+		  right: rem(15px);
+		  margin-top: rem(-7px);
+	  }
+  }
+	&.down {
+		@include icon-pseudo($icon-angle-up){
+			position: absolute;
+			top: 50%;
+			right: rem(15px);
+			margin-top: rem(-7px);
+		}
+	}
+
+
+	&.error {
+	@extend %error;
+		position: relative;
+	}
+	&:focus {
+		border-color: rgba(0,0,0,.25);
 	}
 }
 .select{
 	margin-bottom: rem(30px);
 }
+.jq-selectbox__dropdown {
+	line-height: 2;
+	z-index: 10;
+	width:100%;
+	background: #fff;
+	color: $dark;
+	li {
+	padding: 0 rem(20px) ;
+	transition: background .25s ease;
+		&:hover {
+		background: rgba($accent, .4)
+
+		}
+	}
+}
+
