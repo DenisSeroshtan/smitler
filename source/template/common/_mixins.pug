@@ -3,7 +3,10 @@ mixin preloader
 		.pulse
 
 mixin Btn (titleText, mod = "")
-	a(href="#" class= "btn " + mod) #{titleText}
+	if (titleText == "о салоне")
+		a(href="#js-about" class="btn") #{titleText}
+	else
+		button(class= "btn " + mod) #{titleText}
 
 mixin socials(className)
 	ul(class= className + "__list")
@@ -59,7 +62,9 @@ mixin debug
 			div
 				- for (var i = 1; i <= 12; i++)
 					div
-
+mixin stars(number)
+	- for (var i = 1; i<=number; i++)
+		i.fa.fa-star
 mixin formHidden(email, name="site", text="Заявка с сайта")
 	// hidden required fields
 	input(name="project_name" type="hidden" value= name)

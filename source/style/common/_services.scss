@@ -5,6 +5,51 @@
 .services__list {
 	position: relative;
 	background: $dark;
+	.owl-nav {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		.owl-prev {
+			position: absolute;
+			left: 0;
+			width: rem(64px);
+			height: rem(64px);
+			background: #fff;
+			&:hover {
+				&::before {
+					animation: pulse linear .8s 3
+				}
+			}
+			@include icon-pseudo($icon-angle-double-left) {
+				font-size: rem(26px);
+				position: absolute;
+				left: 50%;
+				line-height: rem(64px);
+				margin-left: rem(-10px);
+
+			}
+		}
+		.owl-next {
+			position: absolute;
+			right: 0;
+			width: rem(64px);
+			height: rem(64px);
+			background: #fff;
+			&:hover {
+				&::before {
+					animation: pulse linear .8s 3
+				}
+			}
+			@include icon-pseudo($icon-angle-double-right) {
+				font-size: rem(26px);
+				position: absolute;
+				left: 50%;
+				line-height: rem(64px);
+				margin-left: rem(-5px);
+			}
+		}
+	}
+
 }
 
 .services__items {
@@ -28,50 +73,6 @@
 	}
 }
 
-.owl-nav {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	.owl-prev {
-		position: absolute;
-		left: 0;
-		width: rem(64px);
-		height: rem(64px);
-		background: #fff;
-		&:hover {
-			&::before {
-				animation: pulse linear .8s 3
-			}
-		}
-		@include icon-pseudo($icon-angle-double-left) {
-			font-size: rem(26px);
-			position: absolute;
-			left: 50%;
-			line-height: rem(64px);
-			margin-left: rem(-10px);
-
-		}
-	}
-	.owl-next {
-		position: absolute;
-		right: 0;
-		width: rem(64px);
-		height: rem(64px);
-		background: #fff;
-		&:hover {
-			&::before {
-				animation: pulse linear .8s 3
-			}
-		}
-		@include icon-pseudo($icon-angle-double-right) {
-			font-size: rem(26px);
-			position: absolute;
-			left: 50%;
-			line-height: rem(64px);
-			margin-left: rem(-5px);
-		}
-	}
-}
 
 @keyframes pulse {
 	0% {

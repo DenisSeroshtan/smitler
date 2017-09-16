@@ -17,7 +17,7 @@
 
   (function () {
     //initialize function counted height for block background services
-    $(".owl-carousel").on('initialized.owl.carousel', function () {
+    $(".services__list").on('initialized.owl.carousel', function () {
       setTimeout(function () {
         onResize();
         servicesHeight();
@@ -25,7 +25,7 @@
 
     });
     // include plugin owl-carousel
-    $('.owl-carousel').owlCarousel({
+    $('.services__list').owlCarousel({
       loop:true,
       nav: true,
       dots: false,
@@ -52,6 +52,20 @@
 
 })();
 
+(function(){
+  $(".reviews__slider").owlCarousel({
+    loop: true,
+    nav: true,
+    dots: true,
+    smartSpeed: 700,
+    navText: ["",""],
+    responsive: {
+      0: {
+        items: 1
+      }
+    }
+  })
 
+})();
 
 

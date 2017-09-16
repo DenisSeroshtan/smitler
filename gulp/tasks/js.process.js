@@ -5,7 +5,7 @@ module.exports = function() {
     return $.gulp.src($.path.app)
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.concat('app.js'))
-      .pipe($.gp.uglify())
+      // .pipe($.gp.uglify())
       .pipe($.gp.sourcemaps.write('./'))
       .pipe($.gulp.dest($.config.root + $.config.dist.js))
 

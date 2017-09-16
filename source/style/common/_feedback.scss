@@ -4,7 +4,6 @@
 		outline: 2px solid $error !important;
 	}
 
-
 .section__feedback {
 	width: 100%;
 	background-repeat: no-repeat;
@@ -86,7 +85,7 @@
 	border: 1px solid #E0B660;
 	border-bottom: 2px solid #E0B660;
 	&.error {
-		outline: 2px solid $error;
+		@extend %error;
 	}
 	&:focus {
 		border-color: rgba(0,0,0,.25);
@@ -95,34 +94,32 @@
 		color: #fff;
 	}
 }
-select.error{
+.jq-selectbox.jqselect.error{
+	position: relative;
 	@extend %error;
+	&:after {
+		content: "Выберите услугу";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 100%;
+		left: 0;
+		color: $error;
+		font-size: rem(13px);
+
+	}
+
 }
 
 label.error {
-
 	position: absolute;
 	color: $error;
 	top: 100%;
 	left: 0;
 }
-#услуга-error {
-	width:100%;
-	height:100%;
-	position: absolute;
-	top: 0;
-	@extend %error;
-	&:after {
-		content: "Необходимо выбрать услугу";
-		position: absolute;
-		top: 100%;
-		width: 100%;
-		height:100%;
 
-	}
-
-}
 .jq-selectbox__select {
+	position: relative;
 	padding: rem(10px) rem(20px);
 	border: 1px solid #E0B660;
 	border-bottom: 2px solid #E0B660;
@@ -131,24 +128,6 @@ label.error {
 .jq-selectbox {
 	width: 100%;
 	cursor: pointer;
-  &.up{
-	  @include icon-pseudo($icon-angle-down){
-		  position: absolute;
-		  top: 50%;
-		  right: rem(15px);
-		  margin-top: rem(-7px);
-	  }
-  }
-	&.down {
-		@include icon-pseudo($icon-angle-up){
-			position: absolute;
-			top: 50%;
-			right: rem(15px);
-			margin-top: rem(-7px);
-		}
-	}
-
-
 	&.error {
 	@extend %error;
 		position: relative;
@@ -159,6 +138,29 @@ label.error {
 }
 .select{
 	margin-bottom: rem(30px);
+	width: 100%;
+}
+.jq-selectbox__trigger{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.jq-selectbox__trigger-arrow{
+	position: absolute;
+	top: 50%;
+	right: rem(15px);
+	margin-top: rem(-6px);
+	border-left: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	height: rem(12px);
+	width: rem(12px);
+  transform: rotate(-45deg);
+	&.up {
+		transform: rotate(135deg);
+		margin-top: 0;
+	}
 }
 .jq-selectbox__dropdown {
 	line-height: 2;

@@ -7,6 +7,9 @@
 	padding: 5% 0;
 	position: relative;
 	color: #fff;
+	@include sm-block {
+		padding: 10% 0;
+	}
 	@include cover($dark);
 	@include pseudo(){
 		display: block;
@@ -76,6 +79,7 @@
 	padding: 4px;
 	box-sizing: border-box;
 }
+
  .fotorama__thumb-border {
 	 border-color:  darken(#fff, 80%);
  }
