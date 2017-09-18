@@ -57,15 +57,36 @@
     loop: true,
     nav: true,
     dots: true,
+    items: 1,
+    smartSpeed: 700,
+    navText: ["",""]
+
+  })
+
+})();
+(function () {
+  $(".partners__slider").owlCarousel({
+    loop: true,
+    nav: true,
     smartSpeed: 700,
     navText: ["",""],
+    responsiveClass: true,
     responsive: {
       0: {
         items: 1
+      },
+      576 : {
+        items: 2
+      },
+      750: {
+        items: 3
+      },
+      992: {
+        items: 4
       }
-    }
-  })
 
+    }
+  });
 })();
 
 

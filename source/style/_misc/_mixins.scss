@@ -107,3 +107,20 @@
 		@content;
 	}
 }
+
+@mixin dots {
+	.owl-dots {
+		text-align: center;
+		.owl-dot {
+			display: inline-block;
+			height: rem(10px);
+			width: rem(10px);
+			margin-right: rem(10px);
+			background: #fff;
+			border-radius: 50%;
+			&.active {
+				background: $accent;
+			}
+		}
+	}
+}

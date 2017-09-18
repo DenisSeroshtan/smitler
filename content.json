@@ -4,7 +4,8 @@
     "about_bg" : "background-image: url('assets/img/about/about_bg.jpg')",
     "header_bg" : "background-image: url('assets/img/top-bg.jpg')",
     "feedback_bg" : "background-image: url('assets/img/feedback/feedback_bg.jpg')",
-    "reviews_bg" : "background-image: url('assets/img/reviews_bg.jpg')"
+    "reviews_bg" : "background-image: url('assets/img/reviews_bg.jpg')",
+    "partners_bg" : "background-image: url('assets/img/partners_bg.jpg')"
   },
   "pathSocials" : {
     "facebook" : "https://www.facebook.com/",

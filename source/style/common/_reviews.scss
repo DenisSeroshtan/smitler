@@ -31,6 +31,7 @@
 	position: relative;
 	text-align: center;
 	padding: rem(50px) 0;
+	@include dots;
 	.owl-nav{
 		position: absolute;
 		top: rem(200px);
@@ -57,20 +58,6 @@
 			}
 		}
 	}
-	.owl-dots {
-		text-align: center;
-		.owl-dot {
-			display: inline-block;
-			height: rem(10px);
-			width: rem(10px);
-			margin-right: rem(10px);
-			background: #fff;
-			border-radius: 50%;
-			&.active {
-				background: $accent;
-			}
-		}
-	}
 }
 .reviews__name {
 	@include font(30px);
@@ -81,8 +68,9 @@
 	color: #95989A;
   margin-top: rem(11px);
 }
+
 .fa.fa-star{
-	margin-top: rem(25px);
+	margin: 0 2px;
 	line-height:1;
 	color: $accent;
 	@include icon-pseudo($icon-star, $accent);
