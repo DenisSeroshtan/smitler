@@ -1,10 +1,7 @@
-header(style= inlineImg.header_bg).header
+header(style= inlineImg.header_bg).header#js-header
 
 	.header-top
-		.header-top__logo
-			a(href="/").header-top__logo-link
-				img(src="assets/img/logo-1.svg" alt="салон красоты smitler" ).header-top__logo-img
-
+		+logoSvg
 		.phone= contacts.phone
 
 		a(href="#my-menu").hamburger.hamburger--emphatic

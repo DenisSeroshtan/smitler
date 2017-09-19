@@ -2,37 +2,48 @@ mixin preloader
 	.preloader
 		.pulse
 
+mixin logoSvg
+	.header-top__logo
+		a(href="/").header-top__logo-link
+			img(src="assets/img/logo-1.svg"
+				alt="салон красоты smitler" ).header-top__logo-img
+
 mixin Btn (titleText, mod = "")
 	if (titleText == "о салоне")
 		a(href="#js-about" class="btn") #{titleText}
 	else
 		button(class= "btn " + mod) #{titleText}
 
-mixin socials(className)
-	ul(class= className + "__list")
+mixin socials(className, mod = '')
+	ul(class= className + "__list " + mod)
 		each value, key in pathSocials
-			li(class=className + "__items")
-				a(href=value class=className + "__link " + key)
+			li(class=className + "__items " + mod)
+				a(href=value class=className + "__link " + key + ' ' + mod)
 
 mixin contacts(className)
 	ul(class=className + "__list")
 		each value, key in contacts
 			li(class=className + "__items " + key)= value
 
-mixin menuNav(className)
+mixin menuNav(className, mod="")
+
 	if (className == "option")
 		each key, value in menu
 			if value != "news" && value != "diploma" && value != "price" && value != "about" && value != "specialists"
 				option= key.name
+
+
+	else if (mod == "header-nav_footer")
+		ul(class=className + "__list "+ mod)
+			each key, value in menu
+				if (value != "news" && value != "diploma"&& value != "price" && value!="about")
+					li(class= className + "__items " + mod)
+						a(href=key.path class=className + "__link "+ mod)= key.name
 	else
 		ul(class=className + "__list")
 			each key, value in menu
 				li(class= className + "__items")
-					if className == "footer-nav"
-						if value != "news" && value != "diploma"&& value != "price" && value!="about"
-								a(href=key.path class=className + "__link")= key.name
-					else
-						a(href=key.path class=className + "__link")= key.name
+					a(href=key.path class=className + "__link")= key.name
 
 mixin titleLogo(className = '')
 	div(class= "title__logo"+" "+className)
