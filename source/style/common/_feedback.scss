@@ -1,8 +1,8 @@
 // variables
-	$error:  #ff4a1e;
-	%error {
-		outline: 2px solid $error !important;
-	}
+$error:  #ff4a1e;
+%error {
+	outline: 2px solid $error !important;
+}
 
 .section__feedback {
 	width: 100%;
@@ -40,7 +40,6 @@
 	@include size-xs(12);
 	@include offset-xs(0);
 	position: relative;
-
 }
 .s-title_white {
 	color: inherit;
@@ -48,6 +47,12 @@
 .form {
 	margin-top: rem(35px);
 	position: relative;
+	button {
+		@include md-block{
+			display: flex;
+			margin: auto;
+		}
+	}
 }
 .success {
 	z-index: 10;
@@ -94,6 +99,9 @@
 		color: #fff;
 	}
 }
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-/style select/_-_-_-_-_-_-_-_-_-_-_-_-//
+
 .jq-selectbox.jqselect.error{
 	position: relative;
 	@extend %error;
@@ -106,9 +114,7 @@
 		left: 0;
 		color: $error;
 		font-size: rem(13px);
-
 	}
-
 }
 
 label.error {
@@ -173,7 +179,6 @@ label.error {
 	transition: background .25s ease;
 		&:hover {
 		background: rgba($accent, .4)
-
 		}
 	}
 }

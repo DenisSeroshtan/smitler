@@ -110,16 +110,28 @@
 
 }
 .footer__map {
+	//align-self: center;
 	@include col;
 	@include size(4);
 	@include size-md(6);
-	@include size-sm(12);
+	@include size-sm(8);
+	@include sm-block {
+		margin: auto;
+	}
+	@include size-xs(12);
+	height: rem(220px);
+
+	opacity: .7;
+	#map {
+		height: 100%;
+		width: 100%;
+	}
 
 }
 .top {
 	display: inline-block;
 	position: fixed;
-	//right: -9999em;
+	right: -10em;
 	bottom:rem(25px);
 	width:rem(50px);
 	height:rem(50px);
@@ -141,4 +153,7 @@
   &.active {
 	  right: rem(25px);
   }
+}
+.ymaps-2-1-55-zoom {
+	bottom: 40px;
 }

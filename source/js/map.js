@@ -16,11 +16,12 @@
         {
       iconLayout: 'default#image',
       iconImageHref: 'assets/img/metka.svg',
-      iconImageSize: [22, 29],
+      iconImageSize: [28, 36],
       iconImageOffset: [-10, -35]
     });
 
     myMap.behaviors.disable(['scrollZoom']);
     myMap.geoObjects.add(myPlacemark);
+
   }
 })();

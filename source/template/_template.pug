@@ -22,16 +22,15 @@ html
 		meta(name="apple-mobile-web-app-status-bar-style" content=colorBrowser)
 		link(rel='stylesheet' href='assets/css/foundation.css')
 		link(rel='stylesheet' href='assets/css/app.css')
-		script(src='assets/js/foundation.js' defer)
 		script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" defer)
+		script(src='assets/js/foundation.js' defer)
 		script(src='assets/js/app.js' defer)
 
 
 	body
-		//+debug
 
 		.wrapper
-			//+preloader
+			+preloader
 			a(href="#js-header").top
 			//-_-_-_-_-_-_-_-_-_-_-_-_-/content/_-_-_-_-_-_-_-_-_-_-_-_-//
 			block content
